@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useSiteContent } from "../content/SiteContentProvider";
 import Reveal from "../components/Reveal";
+import TestimonialMarquee from "../components/TestimonialMarquee";
 import { IMAGES } from "../assets/images";
 
 export default function Home() {
   const { content } = useSiteContent();
-  const { profile, contact } = content;
+  const { profile, contact, testimonials } = content;
 
   return (
     <div className="max-w-container-max mx-auto px-gutter md:px-section-padding-sm overflow-hidden pt-24 pb-section-padding-sm md:pb-section-padding-lg">
@@ -192,6 +193,9 @@ export default function Home() {
 
         </div>
       </section>
+
+      {/* Testimonial marquee */}
+      <TestimonialMarquee testimonials={testimonials} />
 
       {/* Quote — full-viewport, after bento */}
       <Reveal>

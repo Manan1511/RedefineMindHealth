@@ -11,43 +11,20 @@ export default function AdminLogin({ onSuccess }: Props) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const DEV_PASSWORD = "rmh@admin2024";
-
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
     setLoading(true);
+    await new Promise((r) => setTimeout(r, 400));
 
-    // In local dev the Netlify function isn't running — check password client-side.
-    if (import.meta.env.DEV) {
-      await new Promise((r) => setTimeout(r, 400)); // feel natural
-      if (password === DEV_PASSWORD) {
-        sessionStorage.setItem("rmh_admin_token", password);
-        onSuccess();
-      } else {
-        setError("Incorrect password. Try again.");
-      }
-      setLoading(false);
-      return;
+    const validPassword = import.meta.env.VITE_ADMIN_PASSWORD as string;
+    if (password === validPassword) {
+      sessionStorage.setItem("rmh_admin_token", password);
+      onSuccess();
+    } else {
+      setError("Incorrect password. Try again.");
     }
-
-    try {
-      const res = await fetch("/.netlify/functions/admin-save", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action: "auth", password }),
-      });
-      if (res.ok) {
-        sessionStorage.setItem("rmh_admin_token", password);
-        onSuccess();
-      } else {
-        setError("Incorrect password. Try again.");
-      }
-    } catch {
-      setError("Could not reach the server. Try again.");
-    } finally {
-      setLoading(false);
-    }
+    setLoading(false);
   }
 
   return (

@@ -162,6 +162,87 @@ export const defaultContent: SiteContent = {
     },
   ],
 
+  testimonials: [
+    {
+      id: "t-01",
+      quote: "I started counselling when I was struggling with constant anxiety and overthinking. Every session gave me the space to slow down, understand what I was experiencing, and develop healthier ways of coping. I always felt heard, respected, and never judged.",
+      attribution: "Young Professional",
+      category: "Individual Counselling",
+    },
+    {
+      id: "t-02",
+      quote: "After going through a difficult phase in my personal life, I felt emotionally exhausted and unsure of myself. Counselling helped me regain confidence, understand my emotional patterns, and approach life with greater clarity. The sessions felt safe, thoughtful, and genuinely supportive.",
+      attribution: "Working Professional",
+      category: "Individual Counselling",
+    },
+    {
+      id: "t-03",
+      quote: "I appreciated that the sessions weren't about giving advice or telling me what to do. Instead, I was encouraged to reflect, understand myself better, and make decisions that felt right for me. It has been an incredibly valuable experience.",
+      attribution: "Student",
+      category: "Individual Counselling",
+    },
+    {
+      id: "t-04",
+      quote: "My partner and I were finding it difficult to communicate without arguments. Counselling helped us slow down, listen to each other differently, and better understand what was happening beneath the conflict. We left each session with practical insights we could apply in our relationship.",
+      attribution: "Married Couple",
+      category: "Couples Counselling",
+    },
+    {
+      id: "t-05",
+      quote: "We came to counselling feeling emotionally distant and unsure how to reconnect. The sessions created a neutral space where both of us felt equally heard. It helped us rebuild trust and communicate with much more empathy.",
+      attribution: "Couple Together for 4 Years",
+      category: "Couples Counselling",
+    },
+    {
+      id: "t-06",
+      quote: "What stood out most was the calm, thoughtful approach and the way she created an environment where both of us felt equally heard. We left every session with greater clarity, practical insights, and a stronger understanding of ourselves as individuals and as partners.",
+      attribution: "Couple Together for 6 Years",
+      category: "Couples Counselling",
+    },
+    {
+      id: "t-07",
+      quote: "I was completely confused about my career path after graduation. Through counselling, I gained clarity about my strengths, interests, and long-term goals. I now feel much more confident in the direction I've chosen.",
+      attribution: "University Student",
+      category: "Career Counselling",
+    },
+    {
+      id: "t-08",
+      quote: "Career counselling gave me much-needed clarity during a time when I felt overwhelmed by career choices. Harshika helped me understand my strengths, interests, and values, making the decision-making process much more meaningful. I now feel more confident about the direction I've chosen.",
+      attribution: "Recent Graduate",
+      category: "Career Counselling",
+    },
+    {
+      id: "t-09",
+      quote: "The mental fitness assessment process was explained clearly from the beginning. Everything was conducted professionally, respectfully, and without making the experience feel intimidating. I appreciated the transparency and attention to detail throughout.",
+      attribution: "Legal Assessment Client",
+      category: "Mental Fitness Assessment",
+    },
+    {
+      id: "t-10",
+      quote: "She made the child feel comfortable throughout the interaction and explained each step with patience and professionalism. The process was smooth and reassuring.",
+      attribution: "Production Head",
+      category: "Mental Fitness Assessment",
+    },
+    {
+      id: "t-11",
+      quote: "The process has always been prompt, organised, and professional. Reports are delivered within the agreed timeline, making it easy for production schedules to stay on track while ensuring the child's well-being remains the priority.",
+      attribution: "Production Coordinator",
+      category: "Mental Fitness Assessment",
+    },
+    {
+      id: "t-12",
+      quote: "Our team attended a workplace mental health workshop that was engaging, practical, and relevant. The session encouraged open conversations while maintaining a professional and respectful environment. We received excellent feedback from our employees afterward.",
+      attribution: "HR Business Partner, CA Firm",
+      category: "Corporate Workshop",
+    },
+    {
+      id: "t-13",
+      quote: "The session exceeded our expectations. The content was practical, engaging, and relevant to the challenges employees face today. The interactive activities encouraged meaningful discussions, and our team left with strategies they could apply both professionally and personally.",
+      attribution: "HR Manager, MNC",
+      category: "Corporate Workshop",
+    },
+  ],
+
   contact: {
     email: "harshika.therapy@gmail.com",
     phone: "+91 98339 31470",

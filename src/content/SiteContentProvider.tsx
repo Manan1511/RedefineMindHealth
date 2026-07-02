@@ -7,16 +7,7 @@ import {
 } from "react";
 import type { SiteContent } from "./types";
 import { defaultContent } from "./defaultContent";
-
-/**
- * Loads editable content at RUNTIME (design "D"): no rebuild needed when the
- * admin saves. In production set VITE_CONTENT_URL to the GitHub raw / jsDelivr
- * URL of content/site.json so edits show without a Netlify build. Locally it
- * falls back to the static copy in /public/content/site.json, and if any fetch
- * fails we use the bundled seed so the site never renders empty.
- */
-const CONTENT_URL =
-  import.meta.env.VITE_CONTENT_URL || "/content/site.json";
+import { supabase } from "../lib/supabase";
 
 interface ContentState {
   content: SiteContent;
@@ -34,17 +25,21 @@ export function SiteContentProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     let cancelled = false;
-    fetch(`${CONTENT_URL}?t=${Date.now()}`, { cache: "no-store" })
-      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-      .then((data: SiteContent) => {
-        if (!cancelled) setContent(data);
-      })
-      .catch(() => {
-        /* keep bundled defaultContent */
-      })
-      .finally(() => {
-        if (!cancelled) setLoading(false);
+
+    supabase
+      .from("site_content")
+      .select("content")
+      .eq("id", 1)
+      .single()
+      .then(({ data, error }) => {
+        if (!cancelled) {
+          if (!error && data?.content && (data.content as SiteContent).profile) {
+            setContent(data.content as SiteContent);
+          }
+          setLoading(false);
+        }
       });
+
     return () => {
       cancelled = true;
     };

@@ -33,6 +33,13 @@ export interface FaqEntry {
   _placeholder?: boolean;
 }
 
+export interface TestimonialEntry {
+  id: string;
+  quote: string;
+  attribution: string;
+  category: string;
+}
+
 export interface SiteContent {
   profile: {
     displayName: string;
@@ -46,6 +53,7 @@ export interface SiteContent {
   experience: ExperienceEntry[];
   services: ServiceEntry[];
   faqs: FaqEntry[];
+  testimonials: TestimonialEntry[];
   contact: {
     email: string;
     phone: string;
