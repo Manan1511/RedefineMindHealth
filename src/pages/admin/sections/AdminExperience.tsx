@@ -133,7 +133,7 @@ export default function AdminExperience() {
       <ul className="divide-y divide-outline-variant">
         {entries.length === 0 && (
           <li className="p-6 text-center font-body-md text-body-md text-on-surface-variant">
-            No entries yet — add one above.
+            No entries yet. Add one above.
           </li>
         )}
         {entries.map((e) => (

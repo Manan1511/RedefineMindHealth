@@ -62,7 +62,7 @@ export default function Home() {
         <div className="absolute -left-20 top-10 w-64 h-64 bg-tertiary-fixed blob-blush opacity-30 mix-blend-multiply blur-3xl -z-10" />
         <Reveal className="w-full md:w-1/3">
           <div className="aspect-square overflow-hidden rounded-[40px] shadow-sm bg-surface-variant">
-            <img className="w-full h-full object-cover" src={IMAGES.detailCalm} alt="" />
+            <img className="w-full h-full object-cover" src={IMAGES.space} alt="" />
           </div>
         </Reveal>
         <Reveal className="w-full md:w-2/3" delay={0.1}>
@@ -101,7 +101,7 @@ export default function Home() {
                 <p className="font-label-sm text-label-sm uppercase tracking-widest opacity-70 mb-2">One-to-one · Confidential</p>
                 <h3 className="font-headline-md text-headline-md text-2xl mb-4">Individual Counselling</h3>
                 <span className="inline-flex items-center gap-2 font-label-sm text-label-sm border border-white/60 px-5 py-2 rounded-full group-hover:bg-white group-hover:text-on-background transition-colors">
-                  Explore <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  Learn more <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </span>
               </div>
             </Link>
@@ -170,7 +170,7 @@ export default function Home() {
                 <p className="font-label-sm text-label-sm uppercase tracking-widest opacity-70 mb-2">Organisations · Teams</p>
                 <h3 className="font-headline-md text-headline-md text-2xl mb-4">Corporate Workshops</h3>
                 <span className="inline-flex items-center gap-2 font-label-sm text-label-sm border border-white/60 px-5 py-2 rounded-full group-hover:bg-white group-hover:text-on-background transition-colors">
-                  Explore <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  Learn more <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </span>
               </div>
             </Link>
@@ -178,14 +178,14 @@ export default function Home() {
 
           {/* Research — photo */}
           <Reveal className="md:col-span-5" delay={0.14}>
-            <Link to="/about" className="block h-full rounded-[28px] relative overflow-hidden group min-h-[280px]">
+            <Link to="/research" className="block h-full rounded-[28px] relative overflow-hidden group min-h-[280px]">
               <img className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={IMAGES.space} alt="" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
               <div className="absolute bottom-0 left-0 p-8 text-white">
                 <p className="font-label-sm text-label-sm uppercase tracking-widest opacity-70 mb-2">Doctoral Research · NMIMS</p>
                 <h3 className="font-headline-md text-headline-md text-2xl mb-4">Research</h3>
                 <span className="inline-flex items-center gap-2 font-label-sm text-label-sm border border-white/60 px-5 py-2 rounded-full group-hover:bg-white group-hover:text-on-background transition-colors">
-                  About me <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  Learn more <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </span>
               </div>
             </Link>
@@ -199,9 +199,9 @@ export default function Home() {
 
       {/* Quote — full-viewport, after bento */}
       <Reveal>
-        <section className="flex items-center justify-center rounded-3xl bg-secondary-container px-gutter my-8 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-48 h-48 bg-surface blob-sage opacity-15 -mr-16 -mt-16" />
-          <div className="max-w-xl mx-auto text-center relative z-10 py-16 md:py-20">
+        <section className="flex items-center justify-center rounded-3xl bg-secondary-container px-gutter my-4 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-28 h-28 bg-surface blob-sage opacity-15 -mr-10 -mt-10" />
+          <div className="max-w-xl mx-auto text-center relative z-10 py-8 md:py-12">
             <span className="material-symbols-outlined text-3xl text-on-secondary-container/40 mb-8 block">
               spa
             </span>
@@ -209,7 +209,7 @@ export default function Home() {
               {profile.quote}
             </p>
             <div className="font-accent-script text-accent-script text-xl text-on-secondary-container/70">
-              — {profile.displayName}
+              {profile.displayName}
             </div>
           </div>
         </section>

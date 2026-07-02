@@ -15,7 +15,7 @@ export default function About() {
           About
         </h1>
         <p className="font-body-lg text-body-lg text-on-surface-variant">
-          A more holistic, tailored experience — built on empathy, respect, and collaboration.
+          A more holistic, tailored experience, built on empathy, respect, and collaboration.
         </p>
       </Reveal>
 
@@ -59,10 +59,10 @@ export default function About() {
         </section>
       </Reveal>
 
-      {/* Clinical journey timeline */}
+      {/* My Journey timeline */}
       <section className="mb-section-padding-lg">
         <Reveal className="text-center mb-16">
-          <h2 className="font-headline-md text-headline-md">Clinical Journey</h2>
+          <h2 className="font-headline-md text-headline-md">My Journey</h2>
         </Reveal>
         <div className="max-w-3xl mx-auto relative pl-8 md:pl-0">
           <div className="absolute left-[7px] md:left-1/2 top-2 bottom-2 w-0.5 bg-secondary/40 md:-translate-x-1/2" />

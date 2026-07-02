@@ -6,8 +6,10 @@ import { useSiteContent } from "../content/SiteContentProvider";
 const NAV = [
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
-  { to: "/faq", label: "FAQ" },
+  { to: "/research", label: "Research" },
+  { to: "/forms", label: "Forms" },
   { to: "/contact", label: "Contact" },
+  { to: "/faq", label: "FAQ" },
 ];
 
 function BookButton({ url, className = "" }: { url: string; className?: string }) {
@@ -104,27 +106,72 @@ export default function Layout() {
       </main>
 
       {/* Footer */}
-      <footer className="w-full mt-auto py-section-padding-sm px-gutter bg-surface-container border-t border-outline-variant rounded-t-3xl">
-        <div className="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
-          <div>
-            <div className="font-headline-md text-headline-md text-on-surface mb-2">
-              RedefineMindHealth
-            </div>
-            <div className="font-body-md text-body-md text-secondary">
-              © {new Date().getFullYear()} {content.profile.displayName}. All rights reserved.
+      <footer className="w-full mt-auto bg-surface-container border-t border-outline-variant rounded-t-3xl">
+        {/* Emergency notice */}
+        <div className="border-b border-outline-variant px-gutter py-8">
+          <div className="max-w-container-max mx-auto">
+            <p className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-3">
+              A Note on Emergencies
+            </p>
+            <p className="font-body-md text-body-md text-on-surface-variant mb-4 max-w-3xl">
+              This space is here to support your ongoing wellbeing, but it is not equipped for crisis or emergency situations. If you or someone you know is in immediate distress, please reach out to one of the helplines below or contact your local emergency services.
+            </p>
+            <div className="flex flex-wrap gap-x-8 gap-y-2">
+              {[
+                { name: "KIRAN", value: "1800-599-0019" },
+                { name: "iCall", value: "+91 91529 87821" },
+                { name: "Vandrevala Foundation", value: "1860-2662-345" },
+                { name: "AASRA", value: "+91 98204 66726" },
+              ].map((h) => (
+                <span key={h.name} className="font-body-md text-body-md text-on-surface">
+                  <span className="text-on-surface-variant">{h.name}:</span>{" "}
+                  <a href={`tel:${h.value.replace(/\s|-/g, "")}`} className="hover:text-primary transition-colors">
+                    {h.value}
+                  </a>
+                </span>
+              ))}
             </div>
           </div>
-          <nav className="flex flex-col md:flex-row gap-4 md:gap-8">
-            <Link className="text-on-surface-variant font-body-md font-semibold hover:text-primary transition-colors" to="/contact">
-              Contact
-            </Link>
-            <a className="text-on-surface-variant font-body-md font-semibold hover:text-primary transition-colors" href={content.contact.instagram} target="_blank" rel="noopener noreferrer">
-              Instagram
-            </a>
-            <a className="text-on-surface-variant font-body-md font-semibold hover:text-primary transition-colors" href={content.contact.linkedin} target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
-          </nav>
+        </div>
+
+        {/* Main footer */}
+        <div className="px-gutter py-section-padding-sm">
+          <div className="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start gap-10">
+            <div className="space-y-2">
+              <div className="font-headline-md text-headline-md text-on-surface">
+                RedefineMindHealth
+              </div>
+              <div className="font-body-md text-body-md text-on-surface-variant">
+                {content.contact.address}
+              </div>
+              <a
+                href={`tel:${content.contact.phone.replace(/\s/g, "")}`}
+                className="block font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+              >
+                {content.contact.phone}
+              </a>
+              <div className="font-body-md text-body-md text-secondary pt-2">
+                © {new Date().getFullYear()} {content.profile.displayName}. All rights reserved.
+              </div>
+            </div>
+            <nav className="flex flex-col md:flex-row gap-4 md:gap-8">
+              <Link className="text-on-surface-variant font-body-md font-semibold hover:text-primary transition-colors" to="/contact">
+                Contact
+              </Link>
+              <Link className="text-on-surface-variant font-body-md font-semibold hover:text-primary transition-colors" to="/research">
+                Research
+              </Link>
+              <Link className="text-on-surface-variant font-body-md font-semibold hover:text-primary transition-colors" to="/forms">
+                Forms
+              </Link>
+              <a className="text-on-surface-variant font-body-md font-semibold hover:text-primary transition-colors" href={content.contact.instagram} target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a>
+              <a className="text-on-surface-variant font-body-md font-semibold hover:text-primary transition-colors" href={content.contact.linkedin} target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+            </nav>
+          </div>
         </div>
       </footer>
     </div>

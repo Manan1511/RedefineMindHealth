@@ -140,7 +140,7 @@ export default function AdminServices() {
       <ul className="divide-y divide-outline-variant">
         {entries.length === 0 && (
           <li className="p-6 text-center font-body-md text-body-md text-on-surface-variant">
-            No services yet — add one above.
+            No services yet. Add one above.
           </li>
         )}
         {entries.map((s) => (

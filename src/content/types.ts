@@ -40,6 +40,14 @@ export interface TestimonialEntry {
   category: string;
 }
 
+export interface ResearchContent {
+  about: string;
+  interests: string[];
+  studyTitle: string;
+  studyDescription: string;
+  formUrl: string;
+}
+
 export interface SiteContent {
   profile: {
     displayName: string;
@@ -54,6 +62,7 @@ export interface SiteContent {
   services: ServiceEntry[];
   faqs: FaqEntry[];
   testimonials: TestimonialEntry[];
+  research: ResearchContent;
   contact: {
     email: string;
     phone: string;

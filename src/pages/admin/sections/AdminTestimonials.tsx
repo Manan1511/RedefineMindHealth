@@ -128,7 +128,7 @@ export default function AdminTestimonials() {
       <ul className="divide-y divide-outline-variant">
         {entries.length === 0 && (
           <li className="p-6 text-center font-body-md text-body-md text-on-surface-variant">
-            No testimonials yet — add one above.
+            No testimonials yet. Add one above.
           </li>
         )}
         {entries.map((t) => (
@@ -138,7 +138,7 @@ export default function AdminTestimonials() {
                 {t.category}
               </span>
               <p className="font-body-md text-body-md text-on-surface text-sm line-clamp-2">"{t.quote}"</p>
-              <p className="font-label-sm text-label-sm text-on-surface-variant text-xs">— {t.attribution}</p>
+              <p className="font-label-sm text-label-sm text-on-surface-variant text-xs">{t.attribution}</p>
             </div>
             <div className="flex gap-1 shrink-0">
               <button onClick={() => openEdit(t)} className="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-full transition-colors">

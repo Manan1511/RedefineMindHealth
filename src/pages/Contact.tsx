@@ -30,7 +30,7 @@ export default function Contact() {
             <div className="absolute -top-10 -right-10 w-48 h-48 bg-surface blob-sage opacity-20" />
             <h2 className="font-headline-md text-headline-md mb-4 relative z-10">Book a session</h2>
             <p className="font-body-lg text-body-lg text-on-secondary-container mb-8 relative z-10">
-              Pick a time that works for you on {profile.displayName.split(" ")[0]}'s calendar — it opens in a new tab.
+              Pick a time that works for you on {profile.displayName.split(" ")[0]}'s calendar. It opens in a new tab.
             </p>
             <a
               href={contact.bookingUrl}

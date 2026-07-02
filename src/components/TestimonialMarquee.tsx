@@ -17,7 +17,7 @@ function TestimonialCard({ t, onReadMore }: { t: TestimonialEntry; onReadMore: (
       </p>
       <div className="flex items-center justify-between">
         <p className="font-label-sm text-label-sm text-on-surface-variant text-sm">
-          — {t.attribution}
+          {t.attribution}
         </p>
         <button
           onClick={onReadMore}
@@ -61,7 +61,7 @@ function TestimonialModal({ t, onClose }: { t: TestimonialEntry; onClose: () => 
           "{t.quote}"
         </p>
         <p className="font-label-sm text-label-sm text-on-surface-variant text-sm">
-          — {t.attribution}
+          {t.attribution}
         </p>
       </motion.div>
     </motion.div>

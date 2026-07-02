@@ -9,6 +9,8 @@ import Services from "./pages/Services";
 import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 import AdminPage from "./pages/admin/AdminPage";
+import Research from "./pages/Research";
+import Forms from "./pages/Forms";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -31,6 +33,8 @@ export default function App() {
             <Route path="services" element={<Services />} />
             <Route path="faq" element={<Faq />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="research" element={<Research />} />
+            <Route path="forms" element={<Forms />} />
           </Route>
           <Route path="/admin" element={<AdminPage />} />
         </Routes>

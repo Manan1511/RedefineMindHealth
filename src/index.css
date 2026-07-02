@@ -69,7 +69,7 @@
   --font-body-lg: "Source Serif 4", serif;
   --font-body-md: "Source Serif 4", serif;
   --font-label-sm: "Source Serif 4", serif;
-  --font-accent-script: "Mr Dafoe", cursive;
+  --font-accent-script: "Cormorant", serif;
 
   /* --- Type scale (size + line-height + weight + tracking) --- */
   --text-display-xl: 64px;
@@ -100,6 +100,7 @@
   --text-accent-script: 1.3em;
   --text-accent-script--line-height: 1;
   --text-accent-script--font-weight: 400;
+  --text-accent-script--font-style: italic;
 
   --text-label-sm: 14px;
   --text-label-sm--line-height: 1.4;
@@ -124,6 +125,11 @@
 /* max-w-container-max helper */
 @utility max-w-container-max {
   max-width: 1200px;
+}
+
+@utility font-accent-script {
+  font-family: var(--font-accent-script);
+  font-style: italic;
 }
 
 @layer base {

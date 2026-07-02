@@ -109,7 +109,7 @@ export default function AdminFaq() {
       <ul className="divide-y divide-outline-variant">
         {entries.length === 0 && (
           <li className="p-6 text-center font-body-md text-body-md text-on-surface-variant">
-            No questions yet — add one above.
+            No questions yet. Add one above.
           </li>
         )}
         {entries.map((f) => (
