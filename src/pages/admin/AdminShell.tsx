@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useSiteContent } from "../../content/SiteContentProvider";
 import AdminBio from "./sections/AdminBio";
 import AdminExperience from "./sections/AdminExperience";
 import AdminServices from "./sections/AdminServices";
@@ -27,6 +28,7 @@ interface Props {
 }
 
 export default function AdminShell({ onLogout }: Props) {
+  const { loading } = useSiteContent();
   const [active, setActive] = useState<Section>("bio");
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -137,14 +139,20 @@ export default function AdminShell({ onLogout }: Props) {
         </header>
 
         <div className="flex-1 p-gutter md:p-8 max-w-[900px] mx-auto w-full space-y-8">
-          {active === "bio" && <AdminBio />}
-          {active === "experience" && <AdminExperience />}
-          {active === "services" && <AdminServices />}
-          {active === "faq" && <AdminFaq />}
-          {active === "affiliations" && <AdminAffiliations />}
-          {active === "contact" && <AdminContact />}
-          {active === "testimonials" && <AdminTestimonials />}
-          {active === "research" && <AdminResearch />}
+          {loading ? (
+            <div className="py-20 text-center font-body-md text-on-surface-variant">Loading…</div>
+          ) : (
+            <>
+              {active === "bio" && <AdminBio />}
+              {active === "experience" && <AdminExperience />}
+              {active === "services" && <AdminServices />}
+              {active === "faq" && <AdminFaq />}
+              {active === "affiliations" && <AdminAffiliations />}
+              {active === "contact" && <AdminContact />}
+              {active === "testimonials" && <AdminTestimonials />}
+              {active === "research" && <AdminResearch />}
+            </>
+          )}
         </div>
       </main>
     </div>
