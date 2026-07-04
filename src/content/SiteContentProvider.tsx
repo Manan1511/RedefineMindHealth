@@ -12,11 +12,13 @@ import { supabase } from "../lib/supabase";
 interface ContentState {
   content: SiteContent;
   loading: boolean;
+  setContent: (c: SiteContent) => void;
 }
 
 const SiteContentContext = createContext<ContentState>({
   content: defaultContent,
   loading: true,
+  setContent: () => {},
 });
 
 export function SiteContentProvider({ children }: { children: ReactNode }) {
@@ -46,7 +48,7 @@ export function SiteContentProvider({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <SiteContentContext.Provider value={{ content, loading }}>
+    <SiteContentContext.Provider value={{ content, loading, setContent }}>
       {children}
     </SiteContentContext.Provider>
   );

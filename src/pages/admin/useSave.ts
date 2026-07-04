@@ -1,12 +1,14 @@
 import { useState } from "react";
 import type { SiteContent } from "../../content/types";
 import { supabase } from "../../lib/supabase";
+import { useSiteContent } from "../../content/SiteContentProvider";
 
 export type SaveStatus = "idle" | "saving" | "saved" | "error";
 
 export function useSave() {
   const [status, setStatus] = useState<SaveStatus>("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const { setContent } = useSiteContent();
 
   async function save(content: SiteContent) {
     setStatus("saving");
@@ -19,6 +21,7 @@ export function useSave() {
 
       if (error) throw error;
 
+      setContent(content);
       setStatus("saved");
       setTimeout(() => setStatus("idle"), 3000);
     } catch (err) {
