@@ -8,7 +8,12 @@ export default function Contact() {
   const rows = [
     { icon: "call", label: "Phone", value: contact.phone, href: `tel:${contact.phone.replace(/\s/g, "")}` },
     { icon: "mail", label: "Email", value: contact.email, href: `mailto:${contact.email}` },
-    { icon: "location_on", label: "Location", value: contact.address, href: undefined },
+    {
+      icon: "location_on",
+      label: "Location",
+      value: contact.address,
+      href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address)}`,
+    },
     { icon: "photo_camera", label: "Instagram", value: "@redefinemindhealth", href: contact.instagram },
   ];
 

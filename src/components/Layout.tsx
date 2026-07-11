@@ -141,9 +141,14 @@ export default function Layout() {
               <div className="font-headline-md text-headline-md text-on-surface">
                 RedefineMindHealth
               </div>
-              <div className="font-body-md text-body-md text-on-surface-variant">
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(content.contact.address)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+              >
                 {content.contact.address}
-              </div>
+              </a>
               <a
                 href={`tel:${content.contact.phone.replace(/\s/g, "")}`}
                 className="block font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
