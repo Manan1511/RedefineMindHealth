@@ -158,6 +158,14 @@ export default function Layout() {
               <div className="font-body-md text-body-md text-secondary pt-2">
                 © {new Date().getFullYear()} {content.profile.displayName}. All rights reserved.
               </div>
+              <a
+                href="https://www.instagram.com/tessellatestudios__/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block font-body-md text-xs text-on-surface-variant/60 hover:text-primary transition-colors"
+              >
+                Developed by Tessellate Studios
+              </a>
             </div>
             <nav className="flex flex-col md:flex-row gap-4 md:gap-8">
               <Link className="text-on-surface-variant font-body-md font-semibold hover:text-primary transition-colors" to="/contact">
