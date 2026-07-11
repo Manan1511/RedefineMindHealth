@@ -162,7 +162,7 @@ export default function Layout() {
                 href="https://www.instagram.com/tessellatestudios__/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block font-body-md text-xs text-on-surface-variant/60 hover:text-primary transition-colors"
+                className="inline-block mt-2 px-3 py-1 rounded-full bg-surface-container-high font-body-md text-xs text-on-surface-variant/70 hover:text-primary hover:bg-surface-container-highest transition-colors"
               >
                 Developed by Tessellate Studios
               </a>
