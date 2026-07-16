@@ -5,6 +5,7 @@ import { useSiteContent } from "../content/SiteContentProvider";
 
 const NAV = [
   { to: "/about", label: "About" },
+  { to: "/gallery", label: "Gallery" },
   { to: "/services", label: "Services" },
   { to: "/research", label: "Research" },
   { to: "/forms", label: "Forms" },

@@ -261,6 +261,8 @@ export const defaultContent: SiteContent = {
       "https://docs.google.com/forms/d/e/1FAIpQLSdeLKuhXgS1uLsJeJRlifwmCbiSpAJCPeXUfyaEtUP3GpYrew/viewform?embedded=true",
   },
 
+  gallery: [],
+
   contact: {
     email: "harshika.therapy@gmail.com",
     phone: "+91 98339 31470",

@@ -9,8 +9,9 @@ import AdminContact from "./sections/AdminContact";
 import AdminAffiliations from "./sections/AdminAffiliations";
 import AdminTestimonials from "./sections/AdminTestimonials";
 import AdminResearch from "./sections/AdminResearch";
+import AdminGallery from "./sections/AdminGallery";
 
-type Section = "bio" | "experience" | "services" | "faq" | "contact" | "affiliations" | "testimonials" | "research";
+type Section = "bio" | "experience" | "services" | "faq" | "contact" | "affiliations" | "testimonials" | "research" | "gallery";
 
 const NAV: { id: Section; icon: string; label: string }[] = [
   { id: "bio", icon: "person", label: "Bio & Profile" },
@@ -21,6 +22,7 @@ const NAV: { id: Section; icon: string; label: string }[] = [
   { id: "contact", icon: "contact_mail", label: "Contact & Links" },
   { id: "testimonials", icon: "format_quote", label: "Testimonials" },
   { id: "research", icon: "science", label: "Research" },
+  { id: "gallery", icon: "photo_library", label: "Gallery" },
 ];
 
 interface Props {
@@ -151,6 +153,7 @@ export default function AdminShell({ onLogout }: Props) {
               {active === "contact" && <AdminContact />}
               {active === "testimonials" && <AdminTestimonials />}
               {active === "research" && <AdminResearch />}
+              {active === "gallery" && <AdminGallery />}
             </>
           )}
         </div>

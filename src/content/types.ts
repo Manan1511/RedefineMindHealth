@@ -48,6 +48,12 @@ export interface ResearchContent {
   formUrl: string;
 }
 
+export interface GalleryEntry {
+  id: string;
+  url: string;
+  caption: string;
+}
+
 export interface SiteContent {
   profile: {
     displayName: string;
@@ -63,6 +69,7 @@ export interface SiteContent {
   faqs: FaqEntry[];
   testimonials: TestimonialEntry[];
   research: ResearchContent;
+  gallery: GalleryEntry[];
   contact: {
     email: string;
     phone: string;
