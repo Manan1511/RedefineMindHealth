@@ -80,7 +80,7 @@ export default function Gallery() {
                   src={transformImage(gallery[active].url, 600, 450, "cover")}
                   alt=""
                   aria-hidden="true"
-                  className={`w-full max-h-[80vh] object-contain rounded-2xl blur-md scale-105 transition-opacity duration-300 ${
+                  className={`w-full max-h-[80vh] object-contain rounded-2xl transition-opacity duration-300 ${
                     fullLoaded ? "opacity-0" : "opacity-100"
                   }`}
                 />
