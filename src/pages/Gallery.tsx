@@ -75,12 +75,12 @@ export default function Gallery() {
               transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative">
+              <div className="relative h-[70vh]">
                 <img
                   src={transformImage(gallery[active].url, 500, 500, "contain", 40)}
                   alt=""
                   aria-hidden="true"
-                  className={`w-full max-h-[80vh] object-contain rounded-2xl transition-opacity duration-300 ${
+                  className={`w-full h-full object-contain rounded-2xl transition-opacity duration-300 ${
                     fullLoaded ? "opacity-0" : "opacity-100"
                   }`}
                 />
@@ -88,7 +88,7 @@ export default function Gallery() {
                   src={transformImage(gallery[active].url, 1600, 1600, "contain", 80)}
                   alt={gallery[active].caption || "Gallery photo"}
                   onLoad={() => setFullLoaded(true)}
-                  className={`absolute inset-0 w-full max-h-[80vh] object-contain rounded-2xl transition-opacity duration-300 ${
+                  className={`absolute inset-0 w-full h-full object-contain rounded-2xl transition-opacity duration-300 ${
                     fullLoaded ? "opacity-100" : "opacity-0"
                   }`}
                 />
