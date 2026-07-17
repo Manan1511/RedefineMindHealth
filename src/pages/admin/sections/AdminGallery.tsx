@@ -3,6 +3,7 @@ import { useSiteContent } from "../../../content/SiteContentProvider";
 import { useSave } from "../useSave";
 import SaveBar from "../SaveBar";
 import { supabase } from "../../../lib/supabase";
+import { transformImage } from "../../../lib/imageTransform";
 import type { GalleryEntry } from "../../../content/types";
 
 const MAX_BYTES = 5 * 1024 * 1024;
@@ -105,7 +106,7 @@ export default function AdminGallery() {
         <div className="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {entries.map((g) => (
             <div key={g.id} className="rounded-2xl border border-outline-variant overflow-hidden">
-              <img src={g.url} alt={g.caption || "Gallery photo"} className="w-full aspect-[4/3] object-cover" />
+              <img src={transformImage(g.url, 300)} alt={g.caption || "Gallery photo"} className="w-full aspect-[4/3] object-cover" loading="lazy" />
               <div className="p-3 space-y-2">
                 <input
                   type="text"

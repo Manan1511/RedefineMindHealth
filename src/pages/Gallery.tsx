@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Reveal from "../components/Reveal";
 import { useSiteContent } from "../content/SiteContentProvider";
+import { transformImage } from "../lib/imageTransform";
 
 export default function Gallery() {
   const { content } = useSiteContent();
@@ -32,10 +33,11 @@ export default function Gallery() {
                 className="group relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-surface-variant"
               >
                 <img
-                  src={item.url}
+                  src={transformImage(item.url, 500)}
                   alt={item.caption || "Gallery photo"}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
+                  decoding="async"
                 />
                 {item.caption && (
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-4 py-3 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -68,7 +70,7 @@ export default function Gallery() {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={gallery[active].url}
+                src={transformImage(gallery[active].url, 1400, 80)}
                 alt={gallery[active].caption || "Gallery photo"}
                 className="w-full max-h-[80vh] object-contain rounded-2xl"
               />
