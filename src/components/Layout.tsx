@@ -143,7 +143,7 @@ export default function Layout() {
                 RedefineMindHealth
               </div>
               <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(content.contact.address)}`}
+                href="https://share.google/eUDXloaIdro16IiTI"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"

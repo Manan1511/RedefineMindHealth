@@ -12,7 +12,7 @@ export default function Contact() {
       icon: "location_on",
       label: "Location",
       value: contact.address,
-      href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address)}`,
+      href: "https://share.google/eUDXloaIdro16IiTI",
     },
     { icon: "photo_camera", label: "Instagram", value: "@redefinemindhealth", href: contact.instagram },
   ];
