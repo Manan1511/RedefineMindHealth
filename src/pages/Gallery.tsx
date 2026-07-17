@@ -77,7 +77,7 @@ export default function Gallery() {
             >
               <div className="relative">
                 <img
-                  src={transformImage(gallery[active].url, 600, 450, "cover")}
+                  src={transformImage(gallery[active].url, 500, 500, "contain", 40)}
                   alt=""
                   aria-hidden="true"
                   className={`w-full max-h-[80vh] object-contain rounded-2xl transition-opacity duration-300 ${
