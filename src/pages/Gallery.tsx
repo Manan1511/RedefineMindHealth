@@ -8,6 +8,12 @@ export default function Gallery() {
   const { content } = useSiteContent();
   const gallery = content.gallery ?? [];
   const [active, setActive] = useState<number | null>(null);
+  const [fullLoaded, setFullLoaded] = useState(false);
+
+  function openLightbox(i: number) {
+    setFullLoaded(false);
+    setActive(i);
+  }
 
   return (
     <div className="max-w-container-max mx-auto px-gutter md:px-section-padding-sm pt-32 pb-section-padding-lg overflow-hidden">
@@ -29,7 +35,7 @@ export default function Gallery() {
           {gallery.map((item, i) => (
             <Reveal key={item.id} delay={(i % 6) * 0.05}>
               <button
-                onClick={() => setActive(i)}
+                onClick={() => openLightbox(i)}
                 className="group relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-surface-variant"
               >
                 <img
@@ -69,11 +75,24 @@ export default function Gallery() {
               transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={transformImage(gallery[active].url, 1600, 1600, "contain", 80)}
-                alt={gallery[active].caption || "Gallery photo"}
-                className="w-full max-h-[80vh] object-contain rounded-2xl"
-              />
+              <div className="relative">
+                <img
+                  src={transformImage(gallery[active].url, 600, 450, "cover")}
+                  alt=""
+                  aria-hidden="true"
+                  className={`w-full max-h-[80vh] object-contain rounded-2xl blur-md scale-105 transition-opacity duration-300 ${
+                    fullLoaded ? "opacity-0" : "opacity-100"
+                  }`}
+                />
+                <img
+                  src={transformImage(gallery[active].url, 1600, 1600, "contain", 80)}
+                  alt={gallery[active].caption || "Gallery photo"}
+                  onLoad={() => setFullLoaded(true)}
+                  className={`absolute inset-0 w-full max-h-[80vh] object-contain rounded-2xl transition-opacity duration-300 ${
+                    fullLoaded ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              </div>
               {gallery[active].caption && (
                 <p className="mt-4 text-center font-body-md text-body-md text-white/90">
                   {gallery[active].caption}
