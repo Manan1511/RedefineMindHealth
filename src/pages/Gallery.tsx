@@ -33,7 +33,7 @@ export default function Gallery() {
                 className="group relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-surface-variant"
               >
                 <img
-                  src={transformImage(item.url, 500)}
+                  src={transformImage(item.url, 600, 450, "cover")}
                   alt={item.caption || "Gallery photo"}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
@@ -70,7 +70,7 @@ export default function Gallery() {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={transformImage(gallery[active].url, 1400, 80)}
+                src={transformImage(gallery[active].url, 1600, 1600, "contain", 80)}
                 alt={gallery[active].caption || "Gallery photo"}
                 className="w-full max-h-[80vh] object-contain rounded-2xl"
               />
